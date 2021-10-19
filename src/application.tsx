@@ -8,6 +8,9 @@ import {
 import logging from './config/logging'
 import routes from './config/routes'
 import './i18n/config'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import theme from './styles/theme'
 
 const Application: React.FC<{}> = (props) => {
   useEffect(() => {
@@ -15,7 +18,8 @@ const Application: React.FC<{}> = (props) => {
   }, [])
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <BrowserRouter>
         <Switch>
           {routes.map((route, index) => {
@@ -36,7 +40,7 @@ const Application: React.FC<{}> = (props) => {
           })}
         </Switch>
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   )
 }
 
