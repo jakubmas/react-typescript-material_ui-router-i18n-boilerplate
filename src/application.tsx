@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import logging from './config/logging'
 import routes from './config/routes'
+import './i18n/config'
 
 const Application: React.FC<{}> = (props) => {
   useEffect(() => {
